@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+class BankDeposit
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+
+        int choice;
+        System.out.print("Enter your choice: ");
+       choice = sc.nextInt();
+System.out.println("1. Term Deposit");
+        System.out.println("2. Recurring Deposit");
+        
+        switch(choice)
+        {
+            case 1:
+                double p,r,a;
+                int n;
+
+                System.out.print("Enter Principal: ");
+                p = sc.nextDouble();
+
+                System.out.print("Enter Rate: ");
+                r = sc.nextDouble();
+
+                System.out.print("Enter Time (years): ");
+                n = sc.nextInt();
+
+                a = p * Math.pow((1 + r/100), n);
+
+                System.out.println("Maturity Amount = " + a);
+                break;
+
+            case 2:
+                double p2,r2,a2;
+                int n2;
+
+                System.out.print("Enter Monthly Installment: ");
+                p2 = sc.nextDouble();
+
+                System.out.print("Enter Rate: ");
+                r2 = sc.nextDouble();
+
+                System.out.print("Enter Time (months): ");
+                n2 = sc.nextInt();
+
+                a2 = p2*n2 + p2*n2*(n2+1)/2 * r2/100 * 1/12;
+
+                System.out.println("Maturity Amount = " + a2);
+                break;
+
+            default:
+                System.out.println("Invalid Choice");
+        }
+    }
+}
